@@ -83,7 +83,6 @@ bool InsertOrderArrayWithElement(int value, Array& arr)
     {
         firstIndex = arr.length;
     }
-    
     if (arr.length + 1 > MaxSize)
     {
         std::cout << "Array is full" << std::endl;
