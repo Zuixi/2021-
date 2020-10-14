@@ -205,7 +205,7 @@ LNode* MergeOrderedList(LNode* headA, LNode*headB)
 void CreateDListTail(DNode* head, int arr[], int length)
 {
     head = (DNode*)malloc(sizeof(DNode));
-    head->next = head->prior = nullptr;
+    head->next = head-> prior = nullptr;
 
     DNode* tail;    // 始终指向尾部元素
     tail = head;
@@ -220,4 +220,30 @@ void CreateDListTail(DNode* head, int arr[], int length)
         tail = tail->next;
     }
     tail->next = nullptr;
+}
+
+// 实现集合的运算 C = A - B
+void SubstractSet(LNode* headA, LNode* headB)
+{
+    LNode* pB = headB;
+    LNode* pA;
+
+    while(pB->next)
+    {
+        // 从B中拿出一个结点依次和A中的结点做比较，相同则从A中删除
+        pA = headA;
+        while(pA->next)
+        {
+            if (pA->next->data == pB->next->data)
+            {
+                // 相同从A 中删除该结点
+                LNode* temp;
+                temp = pA->next;
+                pA->next = pA->next->next;
+                free(temp);
+                pA = pA->next;
+            }
+        }
+        pB = pB->next;
+    }
 }
