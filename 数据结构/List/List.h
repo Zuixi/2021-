@@ -42,4 +42,11 @@ void InsertInOrderedList(LNode* &head, int value);
 // 合并两个有序的链表成为一个有序链表
 LNode* MergeOrderedList(LNode* headA, LNode*headB);
 
+// 对于双链表
+// 双链表的尾插法
+void CreateDListTail(DNode* head);
+
+// 实现集合的运算 C = A - B
+void SubstractSet(LNode* headA, LNode* headB);
+
 #endif
