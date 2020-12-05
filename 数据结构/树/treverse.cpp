@@ -148,7 +148,7 @@ void inorderNoRecursion(TNode* root)
         }
 
         // 出栈
-        if (top != -1)
+        if (top != -1) 
         {
             bt = stack[top--];
             visit(bt);
